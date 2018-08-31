@@ -290,26 +290,26 @@ function initializeazaJoc() {
     // interactions
     navigationKeys = game.input.keyboard.createCursorKeys();
     jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
-    text = game.add.text(580, 16, "SCORE: " + score, {
-      font: "24px Courier New",
-      fill: "white"
+    text = game.add.text(580, 16, 'SCORE: ' + score, {
+      font: '24px Courier New',
+      fill: 'white'
     });
-    textLife = game.add.text(535, 42, "LIVES: ", {
-      font: "24px Courier New",
-      fill: "white"
+    textLife = game.add.text(535, 42, 'LIVES: ', {
+      font: '24px Courier New',
+      fill: 'white'
     });
-    textCounter = game.add.text(575, 42 + 28, "time: " + counter + " sec", {
-      font: "24px Courier New",
-      fill: "white"
+    textCounter = game.add.text(575, 42 + 28, 'time: ' + counter + ' sec', {
+      font: '24px Courier New',
+      fill: 'white'
     });
-    victoryMesage = game.add.text(game.world.centerX, 275, "", {
-      font: "48px Courier New",
-      fill: "white"
+    victoryMesage = game.add.text(game.world.centerX, 275, '', {
+      font: '48px Courier New',
+      fill: 'white'
     });
     victoryMesage.anchor.setTo(0.5, 1);
-    lossMessage = game.add.text(game.world.centerX, 275, "", {
-      font: "48px Courier New",
-      fill: "White"
+    lossMessage = game.add.text(game.world.centerX, 275, '', {
+      font: '48px Courier New',
+      fill: 'White'
     });
     lossMessage.anchor.setTo(0.5, 1);
 
@@ -326,16 +326,16 @@ function initializeazaJoc() {
   function update() {
     back.tilePosition.x += 1;
 
-    text.text = "SCORE: " + score;
+    text.text = 'SCORE: ' + score;
     if (lives == 0)
-      textLife.text = "LIVES:";
+      textLife.text = 'LIVES:';
     else if (lives == 1)
-      textLife.text = "LIVES: ♥";
+      textLife.text = 'LIVES: ♥';
     else if (lives == 2)
-      textLife.text = "LIVES: ♥ ♥";
+      textLife.text = 'LIVES: ♥ ♥';
     else
-      textLife.text = "LIVES: ♥ ♥ ♥";
-    textCounter.text = "TIME: " + counter;
+      textLife.text = 'LIVES: ♥ ♥ ♥';
+    textCounter.text = 'TIME: ' + counter;
 
     game.physics.arcade.collide(player, platform);
     game.physics.arcade.collide(player, beginPlat);
