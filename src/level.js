@@ -13,8 +13,7 @@ let coin;
 let navigationKeys;
 let jumpButton;
 let text;
-let victoryMesage;
-let lossMessage;
+let message;
 let textCounter;
 let poison;
 let lives = 3;
@@ -302,18 +301,11 @@ function initializeazaJoc() {
       font: '24px Courier New',
       fill: 'white'
     });
-    victoryMesage = game.add.text(game.world.centerX, 275, '', {
+    message = game.add.text(game.world.centerX, 275, '', {
       font: '48px Courier New',
       fill: 'white'
     });
-    victoryMesage.anchor.setTo(0.5, 1);
-    lossMessage = game.add.text(game.world.centerX, 275, '', {
-      font: '48px Courier New',
-      fill: 'White'
-    });
-    lossMessage.anchor.setTo(0.5, 1);
-
-    game.time.events.loop(Phaser.Timer.SECOND, time, this);
+    message.anchor.setTo(0.5, 1);
   }
 
   function time() {
@@ -420,11 +412,13 @@ function initializeazaJoc() {
 
     if (playerWon) {
       player.kill();
+      message.text = "YOU WIN!";
       document.location.reload();
     }
 
     if (playerLost) {
       player.kill();
+      message.text = "YOU LOST!";
       document.location.reload();
 
     }
