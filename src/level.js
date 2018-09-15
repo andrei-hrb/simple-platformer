@@ -301,6 +301,7 @@ function initializeazaJoc() {
       font: '24px Courier New',
       fill: 'white'
     });
+
     message = game.add.text(game.world.centerX, 275, '', {
       font: '48px Courier New',
       fill: 'white'
