@@ -15,15 +15,21 @@
         canvas {
             margin: auto;
         }
+        
+        p {
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
+    <p id='load'> Loading... </p>
     <script src='src/js/framework/phaser.js'></script>
     <script src='src/level.js'></script>
 
     <script>
         window.onLoad = initGame();
+        document.getElementById(load).remove();
     </script>
 </body>
 
