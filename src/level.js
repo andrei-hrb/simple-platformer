@@ -236,7 +236,7 @@ function managerStar(player, littleStar) {
 /*******************
  * The game function
  *******************/
-function initializeazaJoc() {
+function initGame() {
   game = new Phaser.Game(1200, 600, Phaser.AUTO, '', {
     preload: loadTextures,
     create: init,
