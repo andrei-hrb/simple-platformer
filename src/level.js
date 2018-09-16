@@ -180,7 +180,7 @@ function addPoison() {
  * Add lava on the screen
  ***********************/
 
-function adaugaLava() {
+function addLava() {
   lava = game.add.physicsGroup();
   lavaa = lava.create(-50, 550, 'lava');
 
@@ -201,7 +201,7 @@ function managerCoin(player, coinss) {
 /*******************
  * The badge manager
  *******************/
-function managerbadgeVictorie(player, badge) {
+function managerBadge(player, badge) {
   badge.kill();
   playerWon = true;
 }
@@ -283,7 +283,7 @@ function initializeazaJoc() {
     addCoins(coinCoordinates);
     addPlatforms();
     addPoison();
-    adaugaLava();
+    addLava();
     addLittleStar();
 
     // interactions
@@ -307,6 +307,8 @@ function initializeazaJoc() {
       fill: 'white'
     });
     message.anchor.setTo(0.5, 1);
+   
+    game.time.events.loop(Phaser.Timer.SECOND, time, this);
   }
 
   function time() {
@@ -333,7 +335,7 @@ function initializeazaJoc() {
     game.physics.arcade.collide(player, platform);
     game.physics.arcade.collide(player, beginPlat);
     game.physics.arcade.overlap(player, coin, managerCoin);
-    game.physics.arcade.overlap(player, badges, managerbadgeVictorie);
+    game.physics.arcade.overlap(player, badges, managerBadge);
     game.physics.arcade.overlap(player, poison, managerPoison);
     game.physics.arcade.overlap(player, lava, managerLava);
     game.physics.arcade.overlap(player, star, managerStar);
