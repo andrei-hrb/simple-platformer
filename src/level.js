@@ -417,13 +417,14 @@ function initGame() {
       player.kill();
       message.text = "YOU WIN!";
       document.location.reload();
+      playerWon = 0;
     }
 
     if (playerLost) {
       player.kill();
       message.text = "YOU LOST!";
       document.location.reload();
-
+      playerLost = 0;
     }
   }
 
